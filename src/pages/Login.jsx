@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useContext, useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../contexts/AuthContext/AuthContext";
 const ArrowBoxIcon = () => (
   <svg
@@ -111,9 +111,10 @@ const Login = () => {
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
-  const { googleLogin, loginUser, user } = useContext(AuthContext);
+  const { googleLogin, loginUser } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  console.log(user);
   const handleLogin = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -121,6 +122,7 @@ const Login = () => {
     loginUser(email, password)
       .then(() => {
         alert("Login Successful");
+        navigate(location?.state || "/");
       })
       .catch((error) => alert(error.code));
   };
