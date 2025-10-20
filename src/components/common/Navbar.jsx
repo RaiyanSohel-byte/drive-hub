@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import { IoCarSport } from "react-icons/io5";
 import { NavLink } from "react-router";
+import { FaUserCircle } from "react-icons/fa";
+import { AuthContext } from "../../contexts/AuthContext/AuthContext";
 
 const Navbar = () => {
+  const { user, logoutUser } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logoutUser()
+      .then(() => alert("Logged Out Successfully"))
+      .catch((error) => alert(error.code));
+  };
   const links = (
     <>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "border-b-2 rounded-none border-black text-black" : ""
+          }
+          to={`/`}
+        >
+          Home
+        </NavLink>
+      </li>
       <li>
         <NavLink
           className={({ isActive }) =>
@@ -69,10 +87,21 @@ const Navbar = () => {
                 />{" "}
               </svg>
             </div>
+
             <ul
               tabIndex="-1"
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
+              {user ? (
+                <h3
+                  className="lg:hidden text-black font-semibold flex items-center gap-2 text-sm ml-2 mb-3
+                "
+                >
+                  <FaUserCircle size={16} /> {user.displayName}
+                </h3>
+              ) : (
+                ""
+              )}
               {links}
             </ul>
           </div>
@@ -84,13 +113,27 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
-        <div className="navbar-end">
-          <NavLink
-            to={`/auth/login`}
-            className="btn bg-black text-white rounded-none"
-          >
-            Login
-          </NavLink>
+        <div className="navbar-end gap-3">
+          {user ? (
+            <>
+              <h3 className="text-black font-semibold hidden lg:flex items-center gap-2 text-lg lobster">
+                <FaUserCircle size={24} /> {user.displayName}
+              </h3>
+              <button
+                onClick={handleLogOut}
+                className="btn bg-black text-white rounded-none"
+              >
+                Log Out
+              </button>
+            </>
+          ) : (
+            <NavLink
+              to={`/auth/login`}
+              className="btn bg-black text-white rounded-none"
+            >
+              Login
+            </NavLink>
+          )}
         </div>
       </div>
     </div>

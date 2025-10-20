@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
-import bg from "../assets/banner.jpg";
+import bg from "../assets/contactbg.jpg";
 const containerVariants = {
   hidden: {
     opacity: 0,
@@ -59,7 +59,7 @@ const Newsletter = () => {
         {}
 
         <motion.p
-          className="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+          className="mt-6 text-lg md:text-xl text-white max-w-2xl mx-auto lg:font-semibold"
           variants={itemVariants}
         >
           A cutting-edge platform where entrepreneurs, indie hackers, investors,

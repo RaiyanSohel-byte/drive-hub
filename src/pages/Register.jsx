@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import { Link } from "react-router";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../contexts/AuthContext/AuthContext";
 
 const UserIcon = () => (
   <svg
@@ -140,6 +141,7 @@ const ArrowLeftIcon = () => (
 );
 
 const Register = () => {
+  const { setUser, createUser, updateUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -150,9 +152,26 @@ const Register = () => {
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
   const handleNext = () => step < 3 && setStep(step + 1);
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
+    createUser(email, password)
+      .then((result) => {
+        // Update Firebase user profile
+        updateUser({ displayName: fullName })
+          .then(() => {
+            // After successful update, update context
+            setUser({ ...result.user, displayName: fullName });
+            alert(`Hello ${fullName}`);
+            navigate("/auth/login");
+          })
+          .catch((error) => alert(error.message));
+      })
+      .catch((error) => alert(error.message));
+
+    // createUser(email, password);
     setTimeout(() => setIsLoading(false), 2000);
   };
 
@@ -205,6 +224,7 @@ const Register = () => {
                     <input
                       id="fullName"
                       type="text"
+                      name="name"
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       placeholder="Enter your full name"
@@ -245,6 +265,7 @@ const Register = () => {
                     <input
                       id="email"
                       type="email"
+                      name="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="name@example.com"
@@ -266,6 +287,7 @@ const Register = () => {
                     </div>
                     <input
                       id="password"
+                      name="password"
                       type={showPassword ? "text" : "password"}
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}

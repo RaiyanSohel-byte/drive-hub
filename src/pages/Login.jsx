@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../contexts/AuthContext/AuthContext";
 const ArrowBoxIcon = () => (
   <svg
     width="24"
@@ -110,6 +111,26 @@ const Login = () => {
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
+  const { googleLogin, loginUser, user } = useContext(AuthContext);
+
+  console.log(user);
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    loginUser(email, password)
+      .then(() => {
+        alert("Login Successful");
+      })
+      .catch((error) => alert(error.code));
+  };
+
+  const handleGoogleLogin = () => {
+    return googleLogin()
+      .then(() => alert("Login Successful"))
+      .catch((error) => alert(error.code));
+  };
+
   return (
     <div className="font-sans text-gray-800  w-full max-w-md bg-white  shadow-2xl p-8 mx-auto border border-gray-200 ">
       <div className="flex justify-center mb-6">
@@ -128,7 +149,7 @@ const Login = () => {
         Make a new doc to bring your words, data, and teams together. For free
       </p>
 
-      <form className="space-y-6">
+      <form onSubmit={(event) => handleLogin(event)} className="space-y-6">
         {}
         <div className="relative">
           <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400 ">
@@ -138,7 +159,8 @@ const Login = () => {
             type="email"
             placeholder="Email"
             aria-label="Email"
-            className="w-full pl-10 pr-4 py-3 bg-gray-50  border-gray-300  rounded-lg focus:ring-2 focus:ring-sky-500  focus:border-sky-500  outline-none transition duration-300 placeholder-gray-500 text-gray-900 "
+            name="email"
+            className="w-full pl-10 pr-4 py-3 bg-gray-50 border-gray-300 border rounded-lg focus:ring-2 focus:ring-sky-500  focus:border-sky-500  outline-none transition duration-300 placeholder-gray-500 text-gray-900 "
           />
         </div>
 
@@ -151,6 +173,7 @@ const Login = () => {
             type={passwordVisible ? "text" : "password"}
             placeholder="Password"
             aria-label="Password"
+            name="password"
             className="w-full pl-10 pr-10 py-3 bg-gray-50  border border-gray-300  rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500  outline-none transition duration-300 placeholder-gray-500  text-gray-900 "
           />
           <button
@@ -188,8 +211,9 @@ const Login = () => {
 
       <div className="flex justify-center space-x-4">
         <button
+          onClick={handleGoogleLogin}
           aria-label="Sign in with Google"
-          className="w-12 h-12 flex items-center justify-center bg-white border border-gray-300 rounded-full hover:bg-gray-100 transition-transform transform hover:scale-110"
+          className="w-12 h-12 flex items-center justify-center bg-white border border-gray-300 rounded-full hover:bg-gray-100 transition-transform transform hover:scale-110 cursor-pointer"
         >
           <img
             src="https://www.google.com/favicon.ico"

@@ -56,18 +56,18 @@ const Home = () => {
             variants={itemVariants}
           >
             <Link
-              to={`/auth/login`}
+              to={`/cars`}
               className="inline-block rounded border border-gray-400 bg-white px-5 py-3 font-medium text-black shadow-sm transition-colors hover:bg-black hover:text-white"
             >
               Get Started
             </Link>
 
-            <a
+            <Link
               className="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900"
-              href="#"
+              to={`/about`}
             >
               Learn More
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </motion.div>

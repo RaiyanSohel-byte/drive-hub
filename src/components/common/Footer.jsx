@@ -45,7 +45,7 @@ const Footer = () => {
         <div className="space-y-4">
           <div className="flex items-center space-x-2">
             <IoCarSport size={32} />
-            <h3 className="text-3xl font-extrabold text-blue-600 lobster">
+            <h3 className="text-3xl font-extrabold text-black lobster">
               Drive Hub
             </h3>
           </div>

@@ -1,8 +1,21 @@
 "use client";
 
-import React from "react";
-import { Link } from "react-router";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../contexts/AuthContext/AuthContext";
 const ResetPassword = () => {
+  const navigate = useNavigate();
+  const { forgetPassword } = useContext(AuthContext);
+  const handleForgetPassword = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    forgetPassword(email)
+      .then(() => {
+        alert("Email Sent");
+        navigate("/auth/login");
+      })
+      .catch((error) => alert(error.code));
+  };
   return (
     <div className="flex items-center justify-center p-4 font-sans relative overflow-hidden ">
       <div className="p-8 border max-w-md w-full relative z-10 transform transition-all duration-300 hover:border-primary/50 bg-white">
@@ -13,7 +26,10 @@ const ResetPassword = () => {
           Enter your email to receive a reset link
         </p>
 
-        <div className="mb-6 relative">
+        <form
+          onSubmit={(event) => handleForgetPassword(event)}
+          className="mb-6 relative"
+        >
           <label
             htmlFor="email"
             className="block text-foreground text-sm font-medium mb-2"
@@ -25,6 +41,7 @@ const ResetPassword = () => {
               type="email"
               id="email"
               placeholder="name@example.com"
+              name="email"
               className="w-full pl-10 pr-4 py-3 rounded-lg bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary border border-border hover:border-primary/50 transition-all duration-200 text-base"
               aria-label="Email address for password recovery"
             />
@@ -44,15 +61,15 @@ const ResetPassword = () => {
               <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
           </div>
-        </div>
 
-        <button
-          type="submit"
-          className="w-full text-primary-foreground py-3 rounded-lg font-bold text-lg shadow-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-75 transition-all duration-200 active:scale-95 transform hover:scale-105 text-white bg-black"
-          aria-label="Send password reset link"
-        >
-          Send Reset Link
-        </button>
+          <button
+            type="submit"
+            className="w-full text-primary-foreground py-3 rounded-lg font-bold text-lg shadow-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-75 transition-all duration-200 active:scale-95 transform hover:scale-105 text-white bg-black cursor-pointer mt-4"
+            aria-label="Send password reset link"
+          >
+            Send Reset Link
+          </button>
+        </form>
 
         <p className="text-muted-foreground text-center text-sm mt-6 mb-8 leading-relaxed">
           We&apos;ll send you a secure link to reset your password.
