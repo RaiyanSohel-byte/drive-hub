@@ -2,7 +2,7 @@
 
 import React, { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext/AuthContext";
-import { FaUserCircle, FaSignOutAlt } from "react-icons/fa";
+import { FaUserCircle, FaSignOutAlt, FaKey } from "react-icons/fa";
 import { motion } from "framer-motion";
 import profileBg from "../assets/profbg.jpg";
 import { Link } from "react-router";
@@ -119,7 +119,7 @@ const Profile = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleLogout}
-              className="inline-flex items-center gap-2 bg-black/70 text-white font-bold py-3 px-6 rounded-lg shadow-md"
+              className="inline-flex items-center gap-2 bg-black/70 text-white font-bold py-3 px-6 rounded-lg shadow-md cursor-pointer"
             >
               <FaSignOutAlt />
               Log Out
@@ -127,10 +127,14 @@ const Profile = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={handleLogout}
-              className="inline-flex items-center gap-2 border border-white text-white font-bold py-3 px-6 rounded-lg shadow-md"
+              className="inline-flex items-center gap-2 border border-white text-white font-bold py-3 px-6 rounded-lg shadow-md cursor-pointer"
             >
-              <Link to={`/auth/reset-password`}>Reset Password</Link>
+              <Link
+                to={`/auth/reset-password`}
+                className="flex gap-2 items-center"
+              >
+                <FaKey /> Reset Password
+              </Link>
             </motion.button>
           </div>
         </motion.div>

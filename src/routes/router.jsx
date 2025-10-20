@@ -9,6 +9,7 @@ import Cars from "../pages/Cars";
 import Contact from "../pages/Contact";
 import Profile from "../pages/Profile";
 import AuthLayout from "../layouts/AuthLayout";
+import PrivateRoute from "./privateroutes/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -25,7 +26,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "cars",
-        element: <Cars />,
+        element: (
+          <PrivateRoute>
+            <Cars />
+          </PrivateRoute>
+        ),
       },
       {
         path: "contact",
@@ -33,7 +38,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "profile",
-        element: <Profile />,
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
       },
     ],
   },
