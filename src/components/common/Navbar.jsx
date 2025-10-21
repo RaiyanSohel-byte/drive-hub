@@ -51,8 +51,8 @@ const Navbar = () => {
             </div>
 
             <ul
-              tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
             >
               {user && (
                 <h3 className="lg:hidden text-black font-semibold flex items-center gap-2 text-sm ml-2 mb-3">

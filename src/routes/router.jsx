@@ -10,6 +10,7 @@ import Contact from "../pages/Contact";
 import Profile from "../pages/Profile";
 import AuthLayout from "../layouts/AuthLayout";
 import PrivateRoute from "./privateroutes/PrivateRoute";
+import Loader from "../components/common/Loader";
 
 export const router = createBrowserRouter([
   {
@@ -26,11 +27,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "cars",
+        loader: () => fetch("/data.json"),
         element: (
           <PrivateRoute>
             <Cars />
           </PrivateRoute>
         ),
+        hydrateFallbackElement: <Loader />,
       },
       {
         path: "contact",

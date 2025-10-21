@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 import bg from "../assets/contactbg.jpg";
+import { FaCar } from "react-icons/fa";
 const containerVariants = {
   hidden: {
     opacity: 0,
@@ -69,26 +70,29 @@ const Newsletter = () => {
         {}
 
         <motion.form
-          className="mt-10 max-w-lg mx-auto"
+          className="mt-12 max-w-md mx-auto border border-white rounded-xl"
           onSubmit={(e) => e.preventDefault()}
           variants={itemVariants}
         >
-          <div className="relative flex flex-col sm:flex-row items-center bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm p-2 rounded-full shadow-lg border border-gray-200/80 dark:border-gray-600/80 group focus-within:ring-2 focus-within:ring-purple-500 focus-within:ring-offset-2 dark:focus-within:ring-offset-gray-900 transition-all duration-300">
-            <Mail className="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-500 hidden sm:block" />
+          <div className="relative bg-white/20 dark:bg-gray-800/30 backdrop-blur-xl border border-white/30 dark:border-gray-700/50 rounded-2xl shadow-xl p-6 flex flex-col gap-4 transition-all duration-500 hover:shadow-2xl hover:border-white/40 ">
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              <div className="relative w-full">
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-200/80" />
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="w-full pl-12 pr-4 py-3 rounded-full bg-white/30 dark:bg-gray-700/40 text-white placeholder:text-gray-200/70 outline-none focus:ring-2 focus:ring-purple-400 focus:bg-white/40 transition-all duration-300 border border-white"
+                  required
+                />
+              </div>
 
-            <input
-              type="email"
-              placeholder="Your Email Address"
-              className="w-full sm:w-auto flex-grow bg-transparent sm:pl-12 px-4 py-3 text-gray-700 dark:text-gray-200 placeholder:text-gray-500 dark:placeholder:text-gray-400 outline-none text-center sm:text-left"
-              required
-            />
-
-            <button
-              type="submit"
-              className="lg:w-full sm:w-auto mt-2 sm:mt-0 px-6 py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 font-semibold rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors duration-300 shadow-md transform group-hover:scale-105"
-            >
-              Get Notified
-            </button>
+              <button
+                type="submit"
+                className="w-full btn sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-white to-gray-500 text-black hover:text-white font-semibold hover:from-black hover:to-gray-600 shadow-lg hover:shadow-gray-500 transition-all duration-300 active:scale-95"
+              >
+                Get Notified
+              </button>
+            </div>
           </div>
         </motion.form>
 

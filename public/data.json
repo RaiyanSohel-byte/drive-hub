@@ -9,7 +9,7 @@
     "transmission": "Automatic",
     "mileage": 15000,
     "color": "White",
-    "image": "/images/toyota_corolla_2022.jpg",
+    "image": "https://media.ed.edmunds-media.com/toyota/corolla/2026/oem/2026_toyota_corolla_sedan_xse_fq_oem_1_815.jpg",
     "description": "Reliable and fuel-efficient sedan with modern safety features."
   },
   {
@@ -22,7 +22,7 @@
     "transmission": "Manual",
     "mileage": 8000,
     "color": "Blue",
-    "image": "/images/honda_civic_2023.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIedS14-MTp9IN8xs42fng3wes0mcpZYWOiYAjgEXbRb603iE7Pe-ZEr1alfCSLu7cqgc&usqp=CAU",
     "description": "Sporty compact car with sleek design and advanced infotainment."
   },
   {
@@ -35,7 +35,7 @@
     "transmission": "Automatic",
     "mileage": 2000,
     "color": "Red",
-    "image": "/images/tesla_model3_2024.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0aq4TFiGQBkPNmjUSgNarOuRi_llVVK1m5A&s",
     "description": "All-electric sedan offering quick acceleration and long range."
   },
   {
@@ -48,7 +48,7 @@
     "transmission": "Manual",
     "mileage": 18000,
     "color": "Yellow",
-    "image": "/images/ford_mustang_2021.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHcakSG0I6JNJkeWIM0A03DX7BIq0J5SNKJg&s",
     "description": "Classic American muscle car with powerful performance."
   },
   {
@@ -61,7 +61,7 @@
     "transmission": "Automatic",
     "mileage": 12000,
     "color": "Black",
-    "image": "/images/bmw_x5_2022.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeiVSUWtFocZKqi0FHFzRlEL0msgpHwfqjIQ&s",
     "description": "Luxury SUV with strong performance and high-end comfort."
   },
   {
@@ -74,7 +74,7 @@
     "transmission": "Automatic",
     "mileage": 9000,
     "color": "Silver",
-    "image": "/images/mercedes_cclass_2023.jpg",
+    "image": "https://wieck-mbusa-production.s3.amazonaws.com/photos/2c3dadbe5035eaa76bd37b2f943fa629f03abd84/preview-928x522.jpg",
     "description": "Elegant sedan with advanced safety tech and smooth handling."
   },
   {
@@ -87,7 +87,7 @@
     "transmission": "Automatic",
     "mileage": 22000,
     "color": "Gray",
-    "image": "/images/hyundai_elantra_2021.jpg",
+    "image": "https://s7d1.scene7.com/is/image/hyundai/2025-elantra-0214-no-talent-gallery:16-9?wid=1440&hei=810&qlt=85,0&fmt=webp",
     "description": "Affordable compact car with modern design and good mileage."
   },
   {
@@ -100,7 +100,7 @@
     "transmission": "Automatic",
     "mileage": 10000,
     "color": "White",
-    "image": "/images/audi_a4_2022.jpg",
+    "image": "https://www.thedrive.com/wp-content/uploads/2022/09/13/audi_a4_2000_pictures_11.jpg?quality=85",
     "description": "Premium sedan with refined interior and strong performance."
   },
   {
@@ -113,7 +113,7 @@
     "transmission": "Automatic",
     "mileage": 7000,
     "color": "Green",
-    "image": "/images/kia_sportage_2023.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIvDqgPfhECZGTUKQGd-qAsVzu-iGEPZKjbg&s",
     "description": "Compact SUV with hybrid powertrain and excellent safety rating."
   },
   {
@@ -126,7 +126,7 @@
     "transmission": "Automatic",
     "mileage": 25000,
     "color": "Blue",
-    "image": "/images/nissan_altima_2021.jpg",
+    "image": "https://media.ed.edmunds-media.com/nissan/altima/2025/oem/2025_nissan_altima_sedan_25-sv_fq_oem_1_1600.jpg",
     "description": "Comfortable midsize sedan with roomy interior and great fuel economy."
   },
   {
@@ -139,7 +139,7 @@
     "transmission": "Automatic",
     "mileage": 14000,
     "color": "Red",
-    "image": "/images/mazda_cx5_2022.jpg",
+    "image": "https://hips.hearstapps.com/hmg-prod/images/2025-mazda-cx-5-front-three-quarters-2-67a23acb1d56f.jpg?crop=0.587xw:0.567xh;0.343xw,0.374xh&resize=1200:*",
     "description": "Stylish compact SUV with excellent driving dynamics."
   },
   {
@@ -152,7 +152,7 @@
     "transmission": "Manual",
     "mileage": 30000,
     "color": "Orange",
-    "image": "/images/chevrolet_camaro_2020.jpg",
+    "image": "https://hips.hearstapps.com/hmg-prod/images/2024-chevrolet-camaro-ss-collectors-edition-1-647e1933c6c20.jpg?crop=0.827xw:0.853xh;0.0946xw,0.129xh&resize=2048:*",
     "description": "High-performance coupe with iconic design and power."
   },
   {
@@ -165,7 +165,7 @@
     "transmission": "Manual",
     "mileage": 5000,
     "color": "Gray",
-    "image": "/images/vw_golfgti_2023.jpg",
+    "image": "https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/01-volkswagen-golf-gti-edition-50-2025-autocar-review-front-driving-lead.jpg",
     "description": "Fun-to-drive hatchback blending performance and practicality."
   },
   {
@@ -178,7 +178,7 @@
     "transmission": "Automatic",
     "mileage": 20000,
     "color": "Brown",
-    "image": "/images/subaru_outback_2021.jpg",
+    "image": "https://www.topgear.com/sites/default/files/2023/10/BTVDAY%20TWO0601.jpg",
     "description": "Rugged crossover with all-wheel drive and high safety rating."
   },
   {
@@ -191,7 +191,7 @@
     "transmission": "Manual",
     "mileage": 10000,
     "color": "Green",
-    "image": "/images/jeep_wrangler_2022.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIX0JybdKyyk62NH2kjPg-uoNq8Kyp4nwllw&s",
     "description": "Off-road icon with removable doors and roof for adventure lovers."
   },
   {
@@ -204,7 +204,7 @@
     "transmission": "Automatic",
     "mileage": 6000,
     "color": "Silver",
-    "image": "/images/volvo_xc60_2023.jpg",
+    "image": "https://imgcdn.zigwheels.co.th/large/gallery/exterior/39/398/volvo-xc60-front-angle-low-view-551426.jpg",
     "description": "Scandinavian luxury SUV combining comfort, tech, and safety."
   },
   {
@@ -217,7 +217,7 @@
     "transmission": "Automatic",
     "mileage": 1000,
     "color": "Black",
-    "image": "/images/porsche_911_2024.jpg",
+    "image": "https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/image_1080x624/dam/pnr/2024/Products/992-II/0840_nevada_coupe_u-crane_AKOS0607_edit_V03-sky.jpg/jcr:content/0840_nevada_coupe_u-crane_AKOS0607_edit_V03-sky.jpg",
     "description": "Legendary sports car offering iconic design and thrilling speed."
   },
   {
@@ -230,7 +230,7 @@
     "transmission": "Automatic",
     "mileage": 9000,
     "color": "White",
-    "image": "/images/lexus_rx350_2022.jpg",
+    "image": "https://hips.hearstapps.com/hmg-prod/images/2025-lexus-rx350-premium-101-66f2dbe526c80.jpg?crop=0.730xw:0.547xh;0.0645xw,0.389xh&resize=1200:*",
     "description": "Luxury crossover with smooth performance and quiet ride."
   },
   {
@@ -243,7 +243,7 @@
     "transmission": "Automatic",
     "mileage": 15000,
     "color": "Blue",
-    "image": "/images/jaguar_fpace_2021.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8kNpRVlLycmRxcVCipkjDK4yUt2IK8e7shw&s",
     "description": "Premium SUV combining performance, luxury, and space."
   },
   {
@@ -256,7 +256,7 @@
     "transmission": "Automatic",
     "mileage": 500,
     "color": "Red",
-    "image": "/images/ferrari_roma_2024.jpg",
+    "image": "https://www.motortrend.com/files/67c76d69856fac00084bc6e0/1-2025-ferrari-roma-front-view.jpg",
     "description": "Elegant grand tourer delivering pure Italian performance."
   }
 ]
