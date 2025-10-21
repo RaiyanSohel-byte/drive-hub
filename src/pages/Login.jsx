@@ -2,7 +2,9 @@
 
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
+import { motion } from "framer-motion";
 import { AuthContext } from "../contexts/AuthContext/AuthContext";
+
 const ArrowBoxIcon = () => (
   <svg
     width="24"
@@ -41,6 +43,7 @@ const ArrowBoxIcon = () => (
     />
   </svg>
 );
+
 const EmailIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -57,6 +60,7 @@ const EmailIcon = () => (
     <polyline points="22,6 12,13 2,6"></polyline>
   </svg>
 );
+
 const LockIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -73,6 +77,7 @@ const LockIcon = () => (
     <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
   </svg>
 );
+
 const EyeIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -89,6 +94,7 @@ const EyeIcon = () => (
     <circle cx="12" cy="12" r="3"></circle>
   </svg>
 );
+
 const EyeOffIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -108,9 +114,8 @@ const EyeOffIcon = () => (
 
 const Login = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const togglePasswordVisibility = () => {
-    setPasswordVisible(!passwordVisible);
-  };
+  const togglePasswordVisibility = () => setPasswordVisible(!passwordVisible);
+
   const { googleLogin, loginUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -128,103 +133,153 @@ const Login = () => {
   };
 
   const handleGoogleLogin = () => {
-    return googleLogin()
+    googleLogin()
       .then(() => alert("Login Successful"))
       .catch((error) => alert(error.code));
   };
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.1, duration: 0.3 },
+    }),
+  };
+
   return (
-    <div className="font-sans text-gray-800  w-full max-w-md bg-white  shadow-2xl p-8 mx-auto border border-gray-200 ">
-      <div className="flex justify-center mb-6">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="text-gray-800 w-full max-w-md bg-white backdrop-blur-lg shadow-2xl p-8 mx-auto border border-gray-200 rounded-sm"
+    >
+      {/* Back button */}
+      <motion.div
+        variants={itemVariants}
+        custom={0}
+        className="flex justify-center mb-6"
+      >
         <Link
           to={`/auth/register`}
-          className="w-12 h-12 bg-gray-100  rounded-lg flex items-center justify-center border border-gray-200 "
+          className="w-12 h-12 bg-gray-100 rounded-sm flex items-center justify-center border border-gray-200 hover:scale-110 transition-transform"
         >
           <ArrowBoxIcon />
         </Link>
-      </div>
+      </motion.div>
 
-      <h1 className="text-3xl font-bold text-center mb-2 text-gray-900 ">
+      {/* Title */}
+      <motion.h1
+        variants={itemVariants}
+        custom={1}
+        className="text-3xl font-bold text-center mb-2 text-gray-900"
+      >
         Sign in with email
-      </h1>
-      <p className="text-center text-gray-600 mb-8">
-        Make a new doc to bring your words, data, and teams together. For free
-      </p>
+      </motion.h1>
+      <motion.p
+        variants={itemVariants}
+        custom={2}
+        className="text-center text-gray-600 mb-8"
+      >
+        Make a new doc to bring your words, data, and teams together. For free.
+      </motion.p>
 
-      <form onSubmit={(event) => handleLogin(event)} className="space-y-6">
-        {}
-        <div className="relative">
-          <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400 ">
+      {/* Form */}
+      <motion.form onSubmit={handleLogin} className="space-y-6">
+        <motion.div variants={itemVariants} custom={3} className="relative">
+          <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
             <EmailIcon />
           </span>
           <input
             type="email"
             placeholder="Email"
-            aria-label="Email"
             name="email"
-            className="w-full pl-10 pr-4 py-3 bg-gray-50 border-gray-300 border rounded-lg focus:ring-2 focus:ring-sky-500  focus:border-sky-500  outline-none transition duration-300 placeholder-gray-500 text-gray-900 "
+            className="w-full pl-10 pr-4 py-3 bg-gray-100 border-gray-300 border rounded-sm focus:ring-2 focus:ring-sky-500 outline-none transition duration-300 placeholder-gray-500 text-gray-900"
           />
-        </div>
+        </motion.div>
 
-        {}
-        <div className="relative">
-          <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400 ">
+        <motion.div variants={itemVariants} custom={4} className="relative">
+          <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
             <LockIcon />
           </span>
           <input
             type={passwordVisible ? "text" : "password"}
             placeholder="Password"
-            aria-label="Password"
             name="password"
-            className="w-full pl-10 pr-10 py-3 bg-gray-50  border border-gray-300  rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500  outline-none transition duration-300 placeholder-gray-500  text-gray-900 "
+            className="w-full pl-10 pr-10 py-3 bg-gray-100 border border-gray-300 rounded-sm focus:ring-2 focus:ring-sky-500 outline-none transition duration-300 placeholder-gray-500 text-gray-900"
           />
           <button
             type="button"
             onClick={togglePasswordVisibility}
-            className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400  hover:text-gray-600 "
-            aria-label={passwordVisible ? "Hide password" : "Show password"}
+            className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600"
           >
             {passwordVisible ? <EyeOffIcon /> : <EyeIcon />}
           </button>
-        </div>
+        </motion.div>
 
-        <div className="text-right">
+        <motion.div variants={itemVariants} custom={5} className="text-right">
           <Link
             to={`/auth/reset-password`}
-            className="text-sm font-medium text-gray-600  hover:text-sky-600 "
+            className="text-sm font-medium text-gray-600 hover:text-sky-600"
           >
             Forgot password?
           </Link>
-        </div>
+        </motion.div>
 
-        <button
+        <motion.button
+          variants={itemVariants}
+          custom={6}
           type="submit"
-          className="w-full bg-gray-800 text-white  font-bold py-3 px-4 rounded-lg hover:bg-gray-900  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800   shadow-md transition-transform transform hover:scale-105"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="w-full bg-gray-800 text-white font-bold py-3 px-4 rounded-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 shadow-md"
         >
           Get Started
-        </button>
-      </form>
+        </motion.button>
+      </motion.form>
 
-      <div className="flex items-center my-6">
-        <hr className="flex-grow border-t border-gray-300 " />
-        <span className="mx-4 text-sm text-gray-500 ">Or sign in with</span>
-        <hr className="flex-grow border-t border-gray-300 " />
-      </div>
+      {/* Divider */}
+      <motion.div
+        variants={itemVariants}
+        custom={7}
+        className="flex items-center my-6"
+      >
+        <hr className="flex-grow border-t border-gray-300" />
+        <span className="mx-4 text-sm text-gray-500">Or sign in with</span>
+        <hr className="flex-grow border-t border-gray-300" />
+      </motion.div>
 
-      <div className="flex justify-center space-x-4">
-        <button
+      {/* Google button */}
+      <motion.div
+        variants={itemVariants}
+        custom={8}
+        className="flex justify-center space-x-4"
+      >
+        <motion.button
           onClick={handleGoogleLogin}
-          aria-label="Sign in with Google"
-          className="w-12 h-12 flex items-center justify-center bg-white border border-gray-300 rounded-full hover:bg-gray-100 transition-transform transform hover:scale-110 cursor-pointer"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-12 h-12 flex items-center justify-center bg-white border border-gray-300 rounded-full hover:bg-gray-100 transition-transform cursor-pointer"
         >
           <img
             src="https://www.google.com/favicon.ico"
             alt="Google"
             className="h-5 w-5"
           />
-        </button>
-      </div>
-    </div>
+        </motion.button>
+      </motion.div>
+    </motion.div>
   );
 };
+
 export default Login;

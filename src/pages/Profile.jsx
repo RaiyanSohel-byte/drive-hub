@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext/AuthContext";
 import { FaUserCircle, FaSignOutAlt, FaKey } from "react-icons/fa";
 import { motion } from "framer-motion";
-import profileBg from "../assets/profbg.jpg";
+import profileBg from "../assets/carInterior.jpg";
 import { Link } from "react-router";
 
 const Profile = () => {
@@ -44,17 +44,17 @@ const Profile = () => {
 
   return (
     <div
-      className="min-h-[calc(100vh-50px)]"
+      className="min-h-[calc(100vh-50px)] flex items-center"
       style={{
         backgroundImage: `url(${profileBg})`,
         backgroundSize: "cover",
-        backgroundPosition: "top",
+        backgroundPosition: "center",
       }}
     >
       <div className="max-w-4xl mx-auto px-4 py-10">
         {/* Main Profile Card with Glass Effect */}
         <motion.div
-          className="bg-white/30 backdrop-blur-md border border-white/30 shadow-2xl p-8 rounded-2xl"
+          className="bg-white/30 backdrop-blur-md border border-white/30 shadow-2xl p-8 rounded-sm"
           variants={cardVariants}
           initial="hidden"
           animate="visible"
@@ -101,7 +101,7 @@ const Profile = () => {
             ].map((item, i) => (
               <motion.div
                 key={i}
-                className="p-4 border border-white/20 rounded-lg bg-white/20 backdrop-blur-sm"
+                className="p-4 border border-white/20 rounded-sm bg-white/20 backdrop-blur-sm"
                 custom={i}
                 variants={infoVariants}
                 initial="hidden"
@@ -119,7 +119,7 @@ const Profile = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleLogout}
-              className="inline-flex items-center gap-2 bg-black/70 text-white font-bold py-3 px-6 rounded-lg shadow-md cursor-pointer"
+              className="inline-flex items-center gap-2 bg-black/70 text-white font-bold py-3 px-6 rounded-sm shadow-md cursor-pointer"
             >
               <FaSignOutAlt />
               Log Out
@@ -127,7 +127,7 @@ const Profile = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 border border-white text-white font-bold py-3 px-6 rounded-lg shadow-md cursor-pointer"
+              className="inline-flex items-center gap-2 border border-white text-white font-bold py-3 px-6 rounded-sm shadow-md cursor-pointer"
             >
               <Link
                 to={`/auth/reset-password`}
