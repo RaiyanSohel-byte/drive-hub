@@ -4,6 +4,7 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { motion } from "framer-motion";
 import { AuthContext } from "../contexts/AuthContext/AuthContext";
+import toast from "react-hot-toast";
 
 const ArrowBoxIcon = () => (
   <svg
@@ -126,16 +127,16 @@ const Login = () => {
     const password = event.target.password.value;
     loginUser(email, password)
       .then(() => {
-        alert("Login Successful");
+        toast.success("Login Successful");
         navigate(location?.state || "/");
       })
-      .catch((error) => alert(error.code));
+      .catch((error) => toast.error(error.code));
   };
 
   const handleGoogleLogin = () => {
     googleLogin()
-      .then(() => alert("Login Successful"))
-      .catch((error) => alert(error.code));
+      .then(() => toast.success("Login Successful"))
+      .catch((error) => toast.error(error.code));
   };
 
   // Animation variants
@@ -169,14 +170,7 @@ const Login = () => {
         variants={itemVariants}
         custom={0}
         className="flex justify-center mb-6"
-      >
-        <Link
-          to={`/auth/register`}
-          className="w-12 h-12 bg-gray-100 rounded-sm flex items-center justify-center border border-gray-200 hover:scale-110 transition-transform"
-        >
-          <ArrowBoxIcon />
-        </Link>
-      </motion.div>
+      ></motion.div>
 
       {/* Title */}
       <motion.h1
@@ -278,6 +272,15 @@ const Login = () => {
           />
         </motion.button>
       </motion.div>
+      <motion.h3 className="mt-4">
+        Don't have an account?{" "}
+        <Link
+          to={`/auth/register`}
+          className="font-medium text-gray-600 hover:text-sky-600"
+        >
+          Register
+        </Link>
+      </motion.h3>
     </motion.div>
   );
 };

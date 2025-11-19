@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router";
 import { motion } from "framer-motion";
 import { AuthContext } from "../contexts/AuthContext/AuthContext";
+import toast from "react-hot-toast";
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -14,10 +15,10 @@ const ResetPassword = () => {
     const email = event.target.email.value;
     forgetPassword(email)
       .then(() => {
-        alert("Email Sent");
+        toast.success("Email Sent");
         navigate("/auth/login");
       })
-      .catch((error) => alert(error.code));
+      .catch((error) => toast.error(error.code));
   };
 
   // Animation variants
@@ -40,9 +41,9 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="flex items-center justify-center p-4 font-sans relative overflow-hidden min-h-screen">
+    <div className="flex items-center justify-center font-sans relative overflow-hidden min-h-[calc(100vh-145px)]">
       <motion.div
-        className="p-8 border max-w-md w-full relative z-10 bg-white backdrop-blur-lg shadow-xl border-gray-200 rounded-2xl"
+        className="p-8 border max-w-md w-full relative z-10 bg-white backdrop-blur-lg shadow-xl border-gray-200 rounded-sm"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

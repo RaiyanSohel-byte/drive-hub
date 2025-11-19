@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const Car = ({ car }) => {
   return (
     <div>
-      <Link className="group relative block overflow-hidden">
+      <div className="group relative block overflow-hidden border border-gray-300 rounded-md">
         <button className="absolute end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75">
           <span className="sr-only">Wishlist</span>
 
@@ -38,7 +38,9 @@ const Car = ({ car }) => {
           </h3>
 
           <p className="mt-1.5 line-clamp-3 text-gray-700">{car.description}</p>
-
+          <Link to={`/${car.id}`} className=" underline text-blue-500 text-sm">
+            View Details
+          </Link>
           <form className="mt-4 flex gap-4">
             <button className="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105">
               Add to Cart
@@ -52,7 +54,7 @@ const Car = ({ car }) => {
             </button>
           </form>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };

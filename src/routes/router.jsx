@@ -11,19 +11,32 @@ import Profile from "../pages/Profile";
 import AuthLayout from "../layouts/AuthLayout";
 import PrivateRoute from "./privateroutes/PrivateRoute";
 import Loader from "../components/common/Loader";
+import CarDetails from "../pages/CarDetails";
+import ErrorPage from "../pages/ErrorPage";
+import Cart from "../pages/Cart";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
+        loader: () => fetch("/data.json"),
         element: <Home />,
       },
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "cart",
+        element: (
+          <PrivateRoute>
+            <Cart />
+          </PrivateRoute>
+        ),
       },
       {
         path: "cars",
@@ -34,6 +47,15 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         hydrateFallbackElement: <Loader />,
+      },
+      {
+        path: "/:id",
+        loader: () => fetch("/data.json"),
+        element: (
+          <PrivateRoute>
+            <CarDetails />
+          </PrivateRoute>
+        ),
       },
       {
         path: "contact",

@@ -1,16 +1,59 @@
-# React + Vite
+# Drive Hub 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[🔗 Live Demo]()
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Drive Hub** is a modern, responsive web application designed to manage, upload, and organize your files seamlessly. Users can securely store their files, preview documents, and easily navigate through folders, providing a smooth and efficient file management experience.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Upload and manage files
+- Preview images and documents
+- Create, rename, and delete folders
+- User authentication and secure access
+- Responsive design for desktop and mobile
+- Search and filter files
 
-## Expanding the ESLint configuration
+## Technology Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React, Tailwind CSS, React Router
+- **Backend:** Firebase (Authentication & Firestore)
+- **Hosting:** Firebase Hosting
+
+## Dependencies
+
+- `react`
+- `react-dom`
+- `react-router-dom`
+- `firebase`
+- `react-icons`
+- `react-hot-toast`
+- `uuid`
+
+_(Install exact versions as per `package.json`)_
+
+## Installation / Running Locally
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/RaiyanSohel-byte/drive-hub.git
+cd drive-hub
+npm install
+```
+
+Create a .env file in the root directory and add your Firebase config:
+
+REACT_APP_API_KEY=your_api_key
+REACT_APP_AUTH_DOMAIN=your_auth_domain
+REACT_APP_PROJECT_ID=your_project_id
+REACT_APP_STORAGE_BUCKET=your_storage_bucket
+REACT_APP_MESSAGING_SENDER_ID=your_sender_id
+REACT_APP_APP_ID=your_app_id
+
+```bash
+npm start
+```
+
+Made with ❤️ by Raiyan Sohel

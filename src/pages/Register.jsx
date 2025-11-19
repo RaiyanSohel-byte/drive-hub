@@ -3,6 +3,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../contexts/AuthContext/AuthContext";
+import toast from "react-hot-toast";
 
 const UserIcon = () => (
   <svg
@@ -164,12 +165,12 @@ const Register = () => {
           .then(() => {
             // After successful update, update context
             setUser({ ...result.user, displayName: fullName });
-            alert(`Hello ${fullName}`);
+            toast(`Hello ${fullName}`);
             navigate("/auth/login");
           })
-          .catch((error) => alert(error.message));
+          .catch((error) => toast.error(error.message));
       })
-      .catch((error) => alert(error.message));
+      .catch((error) => toast.error(error.message));
 
     // createUser(email, password);
     setTimeout(() => setIsLoading(false), 2000);

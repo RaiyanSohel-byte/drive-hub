@@ -2,11 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import car from "../../assets/carVector.png";
-const Loader = ({
-  carImage, // your car image path
-  speed = 3, // seconds for a full loop
-  size = 200, // image size
-}) => {
+const Loader = ({ carImage, speed = 1 }) => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black overflow-hidden relative">
       {/* Moving Road Line */}

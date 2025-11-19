@@ -10,7 +10,8 @@
     "mileage": 15000,
     "color": "White",
     "image": "https://media.ed.edmunds-media.com/toyota/corolla/2026/oem/2026_toyota_corolla_sedan_xse_fq_oem_1_815.jpg",
-    "description": "Reliable and fuel-efficient sedan with modern safety features."
+    "description": "Reliable and fuel-efficient sedan with modern safety features.",
+    "rating": 4.5
   },
   {
     "id": 2,
@@ -22,8 +23,9 @@
     "transmission": "Manual",
     "mileage": 8000,
     "color": "Blue",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIedS14-MTp9IN8xs42fng3wes0mcpZYWOiYAjgEXbRb603iE7Pe-ZEr1alfCSLu7cqgc&usqp=CAU",
-    "description": "Sporty compact car with sleek design and advanced infotainment."
+    "image": "https://images.pexels.com/photos/30145510/pexels-photo-30145510.jpeg",
+    "description": "Sporty compact car with sleek design and advanced infotainment.",
+    "rating": 4.6
   },
   {
     "id": 3,
@@ -36,7 +38,8 @@
     "mileage": 2000,
     "color": "Red",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0aq4TFiGQBkPNmjUSgNarOuRi_llVVK1m5A&s",
-    "description": "All-electric sedan offering quick acceleration and long range."
+    "description": "All-electric sedan offering quick acceleration and long range.",
+    "rating": 4.8
   },
   {
     "id": 4,
@@ -49,7 +52,8 @@
     "mileage": 18000,
     "color": "Yellow",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHcakSG0I6JNJkeWIM0A03DX7BIq0J5SNKJg&s",
-    "description": "Classic American muscle car with powerful performance."
+    "description": "Classic American muscle car with powerful performance.",
+    "rating": 4.7
   },
   {
     "id": 5,
@@ -62,7 +66,8 @@
     "mileage": 12000,
     "color": "Black",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeiVSUWtFocZKqi0FHFzRlEL0msgpHwfqjIQ&s",
-    "description": "Luxury SUV with strong performance and high-end comfort."
+    "description": "Luxury SUV with strong performance and high-end comfort.",
+    "rating": 4.9
   },
   {
     "id": 6,
@@ -75,7 +80,8 @@
     "mileage": 9000,
     "color": "Silver",
     "image": "https://wieck-mbusa-production.s3.amazonaws.com/photos/2c3dadbe5035eaa76bd37b2f943fa629f03abd84/preview-928x522.jpg",
-    "description": "Elegant sedan with advanced safety tech and smooth handling."
+    "description": "Elegant sedan with advanced safety tech and smooth handling.",
+    "rating": 4.8
   },
   {
     "id": 7,
@@ -88,7 +94,8 @@
     "mileage": 22000,
     "color": "Gray",
     "image": "https://s7d1.scene7.com/is/image/hyundai/2025-elantra-0214-no-talent-gallery:16-9?wid=1440&hei=810&qlt=85,0&fmt=webp",
-    "description": "Affordable compact car with modern design and good mileage."
+    "description": "Affordable compact car with modern design and good mileage.",
+    "rating": 4.3
   },
   {
     "id": 8,
@@ -101,7 +108,8 @@
     "mileage": 10000,
     "color": "White",
     "image": "https://www.thedrive.com/wp-content/uploads/2022/09/13/audi_a4_2000_pictures_11.jpg?quality=85",
-    "description": "Premium sedan with refined interior and strong performance."
+    "description": "Premium sedan with refined interior and strong performance.",
+    "rating": 4.7
   },
   {
     "id": 9,
@@ -114,7 +122,8 @@
     "mileage": 7000,
     "color": "Green",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIvDqgPfhECZGTUKQGd-qAsVzu-iGEPZKjbg&s",
-    "description": "Compact SUV with hybrid powertrain and excellent safety rating."
+    "description": "Compact SUV with hybrid powertrain and excellent safety rating.",
+    "rating": 4.5
   },
   {
     "id": 10,
@@ -127,7 +136,8 @@
     "mileage": 25000,
     "color": "Blue",
     "image": "https://media.ed.edmunds-media.com/nissan/altima/2025/oem/2025_nissan_altima_sedan_25-sv_fq_oem_1_1600.jpg",
-    "description": "Comfortable midsize sedan with roomy interior and great fuel economy."
+    "description": "Comfortable midsize sedan with roomy interior and great fuel economy.",
+    "rating": 4.4
   },
   {
     "id": 11,
@@ -140,7 +150,8 @@
     "mileage": 14000,
     "color": "Red",
     "image": "https://hips.hearstapps.com/hmg-prod/images/2025-mazda-cx-5-front-three-quarters-2-67a23acb1d56f.jpg?crop=0.587xw:0.567xh;0.343xw,0.374xh&resize=1200:*",
-    "description": "Stylish compact SUV with excellent driving dynamics."
+    "description": "Stylish compact SUV with excellent driving dynamics.",
+    "rating": 4.6
   },
   {
     "id": 12,
@@ -153,7 +164,8 @@
     "mileage": 30000,
     "color": "Orange",
     "image": "https://hips.hearstapps.com/hmg-prod/images/2024-chevrolet-camaro-ss-collectors-edition-1-647e1933c6c20.jpg?crop=0.827xw:0.853xh;0.0946xw,0.129xh&resize=2048:*",
-    "description": "High-performance coupe with iconic design and power."
+    "description": "High-performance coupe with iconic design and power.",
+    "rating": 4.7
   },
   {
     "id": 13,
@@ -166,7 +178,8 @@
     "mileage": 5000,
     "color": "Gray",
     "image": "https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/01-volkswagen-golf-gti-edition-50-2025-autocar-review-front-driving-lead.jpg",
-    "description": "Fun-to-drive hatchback blending performance and practicality."
+    "description": "Fun-to-drive hatchback blending performance and practicality.",
+    "rating": 4.6
   },
   {
     "id": 14,
@@ -179,7 +192,8 @@
     "mileage": 20000,
     "color": "Brown",
     "image": "https://www.topgear.com/sites/default/files/2023/10/BTVDAY%20TWO0601.jpg",
-    "description": "Rugged crossover with all-wheel drive and high safety rating."
+    "description": "Rugged crossover with all-wheel drive and high safety rating.",
+    "rating": 4.4
   },
   {
     "id": 15,
@@ -192,7 +206,8 @@
     "mileage": 10000,
     "color": "Green",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIX0JybdKyyk62NH2kjPg-uoNq8Kyp4nwllw&s",
-    "description": "Off-road icon with removable doors and roof for adventure lovers."
+    "description": "Off-road icon with removable doors and roof for adventure lovers.",
+    "rating": 4.7
   },
   {
     "id": 16,
@@ -205,7 +220,8 @@
     "mileage": 6000,
     "color": "Silver",
     "image": "https://imgcdn.zigwheels.co.th/large/gallery/exterior/39/398/volvo-xc60-front-angle-low-view-551426.jpg",
-    "description": "Scandinavian luxury SUV combining comfort, tech, and safety."
+    "description": "Scandinavian luxury SUV combining comfort, tech, and safety.",
+    "rating": 4.8
   },
   {
     "id": 17,
@@ -218,7 +234,8 @@
     "mileage": 1000,
     "color": "Black",
     "image": "https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/image_1080x624/dam/pnr/2024/Products/992-II/0840_nevada_coupe_u-crane_AKOS0607_edit_V03-sky.jpg/jcr:content/0840_nevada_coupe_u-crane_AKOS0607_edit_V03-sky.jpg",
-    "description": "Legendary sports car offering iconic design and thrilling speed."
+    "description": "Legendary sports car offering iconic design and thrilling speed.",
+    "rating": 5.0
   },
   {
     "id": 18,
@@ -231,7 +248,8 @@
     "mileage": 9000,
     "color": "White",
     "image": "https://hips.hearstapps.com/hmg-prod/images/2025-lexus-rx350-premium-101-66f2dbe526c80.jpg?crop=0.730xw:0.547xh;0.0645xw,0.389xh&resize=1200:*",
-    "description": "Luxury crossover with smooth performance and quiet ride."
+    "description": "Luxury crossover with smooth performance and quiet ride.",
+    "rating": 4.8
   },
   {
     "id": 19,
@@ -243,8 +261,9 @@
     "transmission": "Automatic",
     "mileage": 15000,
     "color": "Blue",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8kNpRVlLycmRxcVCipkjDK4yUt2IK8e7shw&s",
-    "description": "Premium SUV combining performance, luxury, and space."
+    "image": "https://media.istockphoto.com/id/2114774889/photo/jaguar-f-pace-p250-display-at-a-dealership-jaguar-offers-the-f-pace-in-p250-and-p400-models.jpg?s=2048x2048&w=is&k=20&c=XVmRoui1RYz_zG0TYr5SdgrQkPDoHq-7Bw8R-RW_Smk=",
+    "description": "Premium SUV combining performance, luxury, and space.",
+    "rating": 4.7
   },
   {
     "id": 20,
@@ -257,6 +276,7 @@
     "mileage": 500,
     "color": "Red",
     "image": "https://www.motortrend.com/files/67c76d69856fac00084bc6e0/1-2025-ferrari-roma-front-view.jpg",
-    "description": "Elegant grand tourer delivering pure Italian performance."
+    "description": "Elegant grand tourer delivering pure Italian performance.",
+    "rating": 5.0
   }
 ]

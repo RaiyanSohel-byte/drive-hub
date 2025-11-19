@@ -2,32 +2,36 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+
 const TypewriterText = ({
-  text = "Power Up with Electric Performance...",
-  speed = 100,
-  deleteSpeed = 50,
-  pauseDuration = 2000,
+  text = "Electrify Your Drive...",
+  speed = 80, // base typing speed
+  deleteSpeed = 40, // base deleting speed
+  pauseDuration = 1500, // pause at end
   loop = true,
-  className = "",
   showCursor = true,
 }) => {
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+
   useEffect(() => {
     let timeout;
+
+    // Add small random variation for natural typing
+    const randomSpeed = speed + Math.random() * 80;
+    const randomDelete = deleteSpeed + Math.random() * 30;
+
     if (isPaused) {
       timeout = setTimeout(() => {
         setIsPaused(false);
-        if (loop) {
-          setIsDeleting(true);
-        }
+        if (loop) setIsDeleting(true);
       }, pauseDuration);
     } else if (isDeleting) {
       if (displayText.length > 0) {
         timeout = setTimeout(() => {
           setDisplayText(text.substring(0, displayText.length - 1));
-        }, deleteSpeed);
+        }, randomDelete);
       } else {
         setIsDeleting(false);
       }
@@ -35,11 +39,12 @@ const TypewriterText = ({
       if (displayText.length < text.length) {
         timeout = setTimeout(() => {
           setDisplayText(text.substring(0, displayText.length + 1));
-        }, speed);
+        }, randomSpeed);
       } else if (loop) {
         setIsPaused(true);
       }
     }
+
     return () => clearTimeout(timeout);
   }, [
     displayText,
@@ -51,17 +56,16 @@ const TypewriterText = ({
     pauseDuration,
     loop,
   ]);
+
   return (
-    <div className={``}>
+    <div className="inline-block">
       <span className="text-2xl md:text-5xl font-bold text-slate-800 dark:text-slate-200">
         {displayText}
         {showCursor && (
           <motion.span
-            animate={{
-              opacity: [1, 0],
-            }}
+            animate={{ opacity: [1, 0] }}
             transition={{
-              duration: 0.8,
+              duration: 0.5,
               repeat: Infinity,
               repeatType: "reverse",
             }}
@@ -74,6 +78,7 @@ const TypewriterText = ({
     </div>
   );
 };
+
 export default function TypewriterView() {
   return <TypewriterText />;
 }
